@@ -22,3 +22,11 @@ def hello():
 
 
     return render_template("players.html", players=players)
+
+
+
+@app.route("/players", methods=['GET', 'POST'])
+def players():
+    resp = twilio.twiml.Response()
+    resp.message("It works")
+    return str(resp)
