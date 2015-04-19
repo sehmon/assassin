@@ -1,0 +1,10 @@
+{% extends "home.html" %}
+{% block content %}
+
+<h1>These are the players</h1> 
+{% for player in players %}
+<p>{{player}}</p>
+{% endfor %}
+
+
+{% endblock %}
