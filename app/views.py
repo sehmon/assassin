@@ -27,6 +27,10 @@ def hello():
 
 @app.route("/players", methods=['GET', 'POST'])
 def players():
+    
+    body = request.values.get('Body', None)
+    from_number = request.values.get('From', None)
+
     resp = twilio.twiml.Response()
-    resp.message("Fuck You")
+    resp.message(body+" "+from_number)
     return str(resp)
