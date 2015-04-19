@@ -52,6 +52,6 @@ def get_numbers():
     players = models.Player.query.all()
 
     for player in players:
-        numbers.add(player.number)
+        numbers.append(player.number)
     
     return players
