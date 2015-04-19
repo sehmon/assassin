@@ -49,7 +49,7 @@ def players():
 
 def get_numbers():
     numbers = []
-    players = db.query.all()
+    players = db.Player.query.all()
 
     for player in players:
         numbers.add(player.number)
