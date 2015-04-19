@@ -31,7 +31,12 @@ def players():
     body = request.values.get('Body', None)
     from_number = request.values.get('From', None)
 
+    print("Body: " + body)
+    print("Number: " + from_number)
+
     numbers = get_numbers()
+
+    print("Number Array: " + len)
 
     if from_number not in numbers:
         player = models.Player(number=from_number)
