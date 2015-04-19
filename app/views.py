@@ -31,6 +31,27 @@ def players():
     body = request.values.get('Body', None)
     from_number = request.values.get('From', None)
 
+    numbers = get_numbers()
+
+    if from_number not in numbers:
+        player = models.Player(number=from_number)
+        db.session.add(player)
+        db.session.commit()
+        msg = "number not in database"
+    else:
+        msg = "number in database"
+
     resp = twilio.twiml.Response()
-    resp.message(body+" "+from_number)
+    resp.message(msg)
     return str(resp)
+
+
+
+def get_numbers():
+    numbers = []
+    players = db.query.all()
+
+    for player in players:
+        numbers.add(player.number)
+    
+    return players
