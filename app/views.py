@@ -28,5 +28,5 @@ def hello():
 @app.route("/players", methods=['GET', 'POST'])
 def players():
     resp = twilio.twiml.Response()
-    resp.message("It works")
+    resp.message("Fuck You")
     return str(resp)
