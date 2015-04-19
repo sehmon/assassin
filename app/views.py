@@ -36,7 +36,7 @@ def players():
 
     numbers = get_numbers()
 
-    print("Number Array: " + len)
+    print("Number Array: length" + len(numbers))
 
     if from_number not in numbers:
         player = models.Player(number=from_number)
